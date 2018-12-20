@@ -44,10 +44,15 @@ print('一共有', len(good), '筆提到 "good"')
 good = [1 for d in data if 'good' in d]
 print(good)
 
+# 下方line48為一句布林句子
 bad = ['bad' in d for d in data]
 print(bad)
-
 # 等於line47
 # bad = []
 # for d in data:
 #     bad.append('bad' in d)
+
+
+# 列印出留言中有出現 bad or worse的留言
+argue = [d for d in data if 'bad' or 'worse' in d]
+print(argue)
