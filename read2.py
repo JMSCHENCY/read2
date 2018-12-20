@@ -1,6 +1,6 @@
 data = []
 count = 0
-with open('reviews.txt', 'r') as t:
+with open('reviews.txt', 'r') as t: # 這一行是將reviews.txt資料讀進來程式中的前置作業
     for line in t:
         data.append(line)
         count += 1
@@ -22,3 +22,32 @@ print(data[0])
 print('----------------------------')
 print('')
 print(data[1])
+
+new = []
+for d in data:
+    if len(d) < 100:
+        new.append(d)
+print('一共有', len(new), '筆留言長度小於100')
+print(new[0])
+print(new[1])
+
+# good = []
+# for d in data:
+#     if 'good' in d:
+#         good.append(d)
+# print('一共有', len(good), '筆提到 "good"')
+
+# 同line34~37的快寫法 (學起來可以精簡流程）
+good = [d for d in data if 'good' in d] # 此為一個list
+print('一共有', len(good), '筆提到 "good"')
+
+good = [1 for d in data if 'good' in d]
+print(good)
+
+bad = ['bad' in d for d in data]
+print(bad)
+
+# 等於line47
+# bad = []
+# for d in data:
+#     bad.append('bad' in d)
